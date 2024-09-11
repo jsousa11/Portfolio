@@ -1,0 +1,113 @@
+.contact__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    padding-bottom: 3rem;
+}
+
+.contact__title {
+    text-align: center;
+    font-size: var(--h3-font-size);
+    font-weight: var(--h3-font-medium);
+    margin-bottom: var(--mb-1-5);
+}
+
+.contact__subtitle {
+    text-align: center;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-2);
+}
+
+.contact__info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.contact__card {
+    background-color: var(--container-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: .75rem;
+    text-align: center;
+}
+
+.contact__card-icon {
+    font-size: 2rem;
+    color: var(--title-color);
+    margin-bottom: var(--mb-0-25);
+}
+
+.contact__card-title,
+.contact__card-data {
+    font-size: var(--small-font-size);
+}
+
+.contact__card-title {
+    font-weight: var(--font-medium);
+}
+
+.contact__card-data {
+    display: block;
+    margin-bottom: var(--mb-0-75);
+}
+
+.contact__button {
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: .25rem;
+}
+
+.contact__button-icon {
+    font-size: 1rem;
+    transition: .3s;
+}
+
+.contact__button:hover .contact__button-icon {
+    transform: translate(.25rem);
+}
+
+/*========== BREAKPOINTS ==========*/
+/* For large devices */
+@media screen and (min-width: 992px) {
+    .contact__container {
+        column-gap: 3rem;
+    }
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+    .contact__container {
+        grid-template-columns: 1fr;
+        row-gap: 3rem;
+    }
+
+    .contact__info {
+        justify-content: center;
+    }
+
+    .contact__form {
+        margin: 0 auto;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    .contact__info {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__form {
+        width: 100%;
+    }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+}
+  
