@@ -1,7 +1,7 @@
 import React from "react";
 import "./skills.css";
 import { FaJava, FaPython, FaJs, FaReact, FaNodeJs, FaDocker, FaGitAlt } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiMysql, SiMongodb, SiPhp } from 'react-icons/si';
+import { SiTypescript, SiTailwindcss, SiMysql, SiMongodb } from 'react-icons/si';
 
 const Skills = () => {
     return (
