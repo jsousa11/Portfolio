@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "./header.css";
+import { useLanguage } from "../../context/LanguageContext";
 
 const Header = () => {
+    const { language, toggleLanguage, t } = useLanguage();
+
     /*========== Change Backgound Header ==========*/
     window.addEventListener("scroll", function () {
         const header = document.querySelector(".header");
-        // when the scroll is greater than 200 viewport height, 
-        //add the scroll-header class to the a tag with the header tag
         if(this.scrollY >= 80) header.classList.add("scroll-header");
         else header.classList.remove("scroll-header");
     });
@@ -26,52 +27,54 @@ const Header = () => {
                     <ul className="nav__list grid">
                         <li className="nav__item">
                             <a href="#home" onClick={() => setActiveNav("#home")} className={activeNav === "#home" ? "nav__link active-link" : "nav__link"}>
-                                <i className="uil uil-estate nav__icon"></i> 
-                                Home
+                                <i className="uil uil-estate nav__icon"></i>
+                                {t.nav.home}
                             </a>
                         </li>
-
                         <li className="nav__item">
                             <a href="#about" onClick={() => setActiveNav("#about")} className={activeNav === "#about" ? "nav__link active-link" : "nav__link"}>
-                                <i className="uil uil-user nav__icon"></i> 
-                                About
+                                <i className="uil uil-user nav__icon"></i>
+                                {t.nav.about}
                             </a>
                         </li>
-
                         <li className="nav__item">
                             <a href="#skills" onClick={() => setActiveNav("#skills")} className={activeNav === "#skills" ? "nav__link active-link" : "nav__link"}>
-                                <i className="uil uil-file-alt nav__icon"></i> 
-                                Skills
+                                <i className="uil uil-file-alt nav__icon"></i>
+                                {t.nav.skills}
                             </a>
                         </li>
-
                         <li className="nav__item">
                             <a href="#qualification" onClick={() => setActiveNav("#qualification")} className={activeNav === "#qualification" ? "nav__link active-link" : "nav__link"}>
-                                <i className="uil uil-file-alt nav__icon"></i> 
-                                Qualification
+                                <i className="uil uil-file-alt nav__icon"></i>
+                                {t.nav.qualification}
                             </a>
                         </li>
-
                         <li className="nav__item">
-                        <a href="#projects" onClick={() => setActiveNav("#projects")} className={activeNav === "#projects" ? "nav__link active-link" : "nav__link"}>
-                                <i className="uil uil-scenery nav__icon"></i> 
-                                Projects
+                            <a href="#projects" onClick={() => setActiveNav("#projects")} className={activeNav === "#projects" ? "nav__link active-link" : "nav__link"}>
+                                <i className="uil uil-scenery nav__icon"></i>
+                                {t.nav.projects}
                             </a>
                         </li>
-
                         <li className="nav__item">
-                        <a href="#contact" onClick={() => setActiveNav("#contact")} className={activeNav === "#contact" ? "nav__link active-link" : "nav__link"}>
-                                <i className="uil uil-message nav__icon"></i> 
-                                Contact
+                            <a href="#contact" onClick={() => setActiveNav("#contact")} className={activeNav === "#contact" ? "nav__link active-link" : "nav__link"}>
+                                <i className="uil uil-message nav__icon"></i>
+                                {t.nav.contact}
                             </a>
                         </li>
                     </ul>
-
-                    <i className="uil uil-times nav__close" onClick={() => showMenu (!Toggle)}></i>
+                    <i className="uil uil-times nav__close" onClick={() => showMenu(!Toggle)}></i>
                 </div>
 
-                <div className="nav__toggle" onClick={() => showMenu (!Toggle)}>
-                    <i className="uil uil-apps"></i>
+                <div className="nav__actions">
+                    <button className="lang__toggle" onClick={toggleLanguage} aria-label="Toggle language">
+                        <span className={language === 'en' ? 'lang__option lang__active' : 'lang__option'}>EN</span>
+                        <span className="lang__divider">|</span>
+                        <span className={language === 'pt' ? 'lang__option lang__active' : 'lang__option'}>PT</span>
+                    </button>
+
+                    <div className="nav__toggle" onClick={() => showMenu(!Toggle)}>
+                        <i className="uil uil-apps"></i>
+                    </div>
                 </div>
             </nav>
         </header>

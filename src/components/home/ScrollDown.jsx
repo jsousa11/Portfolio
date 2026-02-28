@@ -1,6 +1,8 @@
 import React from "react";
+import { useLanguage } from "../../context/LanguageContext";
 
 const ScrollDown = () => {
+    const { t } = useLanguage();
     return (
         <div className="home__scroll">
             <a href="#about" className="home__scroll-button button--flex">
@@ -39,7 +41,7 @@ const ScrollDown = () => {
                   }}
                 ></path>
             </svg>
-            <span className="home__scroll-name">Scroll down</span>
+            <span className="home__scroll-name">{t.home.scrollDown}</span>
             <i className="uil uil-arrow-down home__scroll-arrow"></i>
             </a>
         </div>

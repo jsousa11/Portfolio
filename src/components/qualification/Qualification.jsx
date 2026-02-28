@@ -1,67 +1,62 @@
 import React from "react";
 import "./qualification.css";
+import { useLanguage } from "../../context/LanguageContext";
+
+const QualItem = ({ title, sub, desc, date, last }) => (
+    <div className={`qual__item${last ? ' qual__item--last' : ''}`}>
+        <span className="qual__dot"></span>
+        <div className="qual__body">
+            <h3 className="qual__title">{title}</h3>
+            {sub  && <span className="qual__subtitle">{sub}</span>}
+            {desc && <span className="qual__desc">{desc}</span>}
+            <div className="qual__date">
+                <i className="uil uil-calendar-alt"></i> {date}
+            </div>
+        </div>
+    </div>
+);
 
 const Qualification = () => {
+    const { t } = useLanguage();
 
     return (
         <section className="qualification section" id="qualification">
-            <h2 className="section__title">Qualification</h2>
-            <span className="section__subtitle">My personal journey
-            </span>
+            <h2 className="section__title">{t.qualification.title}</h2>
+            <span className="section__subtitle">{t.qualification.subtitle}</span>
 
-            <div className="qualification__container container">
-                <div className="qualification__tabs">
-                    <div className="qualification__button qualification__active button--flex">
-                        <i className="uil uil-graduation-cap qualification__icon"></i>
-                        Education
+            <div className="qual__container container">
+
+                {/* ===== EDUCATION ===== */}
+                <div className="qual__column">
+                    <h3 className="qual__heading">
+                        <i className="uil uil-graduation-cap"></i>
+                        {t.qualification.educationTab}
+                    </h3>
+                    <div className="qual__list">
+                        <QualItem title={t.qualification.edu1Title} sub={t.qualification.edu1School} date={t.qualification.edu1Date} />
+                        <QualItem title={t.qualification.edu2Title} sub={t.qualification.edu2School} date={t.qualification.edu2Date} />
+                        <QualItem title={t.qualification.edu3Title} sub={t.qualification.edu3School} date={t.qualification.edu3Date} />
+                        <QualItem title={t.qualification.edu4Title} desc={t.qualification.edu4Sub} date={t.qualification.edu4Date} last />
                     </div>
+                </div>
 
-                    <div className="qualification__button qualification__active button--flex">
-                        <i className="uil uil-briefcase-alt qualificatiPon__icon"></i>
-                        Experience
+                {/* ===== EXPERIENCE ===== */}
+                <div className="qual__column">
+                    <h3 className="qual__heading">
+                        <i className="uil uil-briefcase-alt"></i>
+                        {t.qualification.experienceTab}
+                    </h3>
+                    <div className="qual__list">
+                        <QualItem title={t.qualification.exp1Title} sub={t.qualification.exp1Company} desc={t.qualification.exp1Desc} date={t.qualification.exp1Date} />
+                        <QualItem title={t.qualification.exp2Title} sub={t.qualification.exp2Company} desc={t.qualification.exp2Desc} date={t.qualification.exp2Date} />
+                        <QualItem title={t.qualification.exp3Title} sub={t.qualification.exp3Company} desc={t.qualification.exp3Desc} date={t.qualification.exp3Date} last />
                     </div>
                 </div>
 
-                <div className="qualification__sections">
-                    <div className="qualification__content qualification__content-active">
-                        <div className="qualification__data">
-                            <div>
-                                <h3 className="qualification__title">Computer Science Engineering</h3>
-                                <span className="qualification__subtitle">University of Aveiro</span>
-                                <div className="qualification__calendar">
-                                    <i className="uil uil-calendar-alt"></i>
-                                    2020 - 2024
-                                </div>
-                            </div>
-
-                            <div>
-                                <span className="qualification__rounder"></span>
-                                <span className="qualification__line"></span>
-                            </div>
-                        </div>
-
-                        <div className="qualification__data">
-                            <div></div>
-
-                            <div>
-                                <span className="qualification__rounder"></span>
-                                <span className="qualification__line"></span>
-                            </div>
-
-                            <div>
-                                <h3 className="qualification__title">Marketing Team, AETTUA</h3>
-                                <span className="qualification__subtitle">Creating digital content, managing social media and organizing events.</span>
-                                <div className="qualification__calendar">
-                                    <i className="uil uil-calendar-alt"></i>
-                                    2022 - Present
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default Qualification;
+

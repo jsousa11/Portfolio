@@ -2,18 +2,20 @@ import React from "react";
 import "./about.css";
 import CV from "../../assets/CVJoaoSousa.pdf";
 import Info from "./Info";
+import { useLanguage } from "../../context/LanguageContext";
 
 const About = () => {
+    const { t } = useLanguage();
     return (
         <section className="about section" id="about">
-            <h2 className="section__title">About Me</h2>
+            <h2 className="section__title">{t.about.title}</h2>
             <div className="about__container container grid">
 
                 <div className="about__data">
                     <Info />
 
                     <a download="CVJoaoSousa.pdf" href={CV} className="button button--flex">
-                        Download CV 
+                        {t.about.downloadCV} 
                         <svg
                                 class="button__icon"
                                 xmlns="http://www.w3.org/2000/svg"

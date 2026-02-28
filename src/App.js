@@ -9,24 +9,23 @@ import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import ScrollUp from './components/scrollup/ScrollUp';
 import Projects from './components/Projects/Projects';
+import { LanguageProvider } from './context/LanguageContext';
 
 const App = () => {
   return (
-    <>
-    <Header />
-
-    <main className="main">
-      <Home />
-      <About />
-      <Skills />
-      <Qualification />
-      <Projects />
-      <Contact />
-    </main>
-
-    <Footer />
-    <ScrollUp />
-    </>
+    <LanguageProvider>
+      <Header />
+      <main className="main">
+        <Home />
+        <About />
+        <Skills />
+        <Qualification />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
+      <ScrollUp />
+    </LanguageProvider>
   )
 }
 

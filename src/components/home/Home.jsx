@@ -3,6 +3,7 @@ import "./home.css";
 import Social from "./Social";
 import Data from "./Data";
 import ScrollDown from "./ScrollDown";
+import profileImg from "../../assets/JSousa.png";
 
 const Home = () => {
     return (
@@ -11,7 +12,10 @@ const Home = () => {
                 <div className="home__content grid">
                     <Social />
 
-                    <div className="home__img"></div>
+                    <div
+                        className="home__img"
+                        style={{ backgroundImage: `url(${profileImg})` }}
+                    ></div>
 
                     <Data />
                 
