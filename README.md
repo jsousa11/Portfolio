@@ -2,6 +2,8 @@
 
 Personal portfolio website built with React. Features EN/PT language toggle and sections for skills, experience, education, and projects.
 
+https://jsousa.netlify.app/
+
 ## Tech Stack
 
 - React 18 (Create React App)
@@ -15,8 +17,6 @@ Personal portfolio website built with React. Features EN/PT language toggle and 
 npm install
 npm start
 ```
-
-Opens at [http://localhost:3000](http://localhost:3000).
 
 ## Build
 
