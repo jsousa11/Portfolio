@@ -1,33 +1,39 @@
-# Getting Started with Create React App
+# Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio website built with React. Features EN/PT language toggle and sections for skills, experience, education, and projects.
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+- React 18 (Create React App)
+- CSS custom properties
+- React Context API (i18n)
+- react-icons
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install
+npm start
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Opens at [http://localhost:3000](http://localhost:3000).
 
-### `npm test`
+## Build
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm run build
+```
 
-### `npm run build`
+Output goes to the `build/` folder.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Sections
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Home** — intro and social links
+- **About** — short bio and stats
+- **Skills** — languages, frameworks, tools, testing
+- **Qualification** — education and work experience
+- **Projects** — featured projects with links
+- **Contact** — contact form
 
 ### `npm run eject`
 
