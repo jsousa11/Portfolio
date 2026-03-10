@@ -100,16 +100,45 @@
     }
 }
 
+.home__scroll-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .35rem;
+    margin-top: .5rem;
+}
+
 .home__scroll-name {
     font-size: var(--font-medium);
     color: var(--title-color);
-    margin-right: var(--mb-0-25);
-    margin-left: 2px;
 }
 
 .home__scroll-arrow {
     font-size: 1.25rem;
     color: var(--title-color);
+}
+
+.home__hand {
+    display: inline-block;
+    transform-origin: 70% 70%;
+    animation: wave 2.5s ease-in-out infinite;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.home__hand path {
+    fill: var(--title-color);
+}
+
+@keyframes wave {
+    0%   { transform: rotate(0deg); }
+    10%  { transform: rotate(14deg); }
+    20%  { transform: rotate(-8deg); }
+    30%  { transform: rotate(14deg); }
+    40%  { transform: rotate(-4deg); }
+    50%  { transform: rotate(10deg); }
+    60%  { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
 }
 
 /*==================== BREAKPOINTS ====================*/

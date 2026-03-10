@@ -9,7 +9,6 @@ const Skills = () => {
     return (
         <section className="skills section" id="skills">
             <h2 className="section-title">{t.skills.title}</h2>
-            <span className="section-subtitle">{t.skills.subtitle}</span>
 
             <div className="skills__container container grid">
                 <div className="skills__content">
