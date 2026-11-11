@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./header.css";
 import { useLanguage } from "../../context/LanguageContext";
 
@@ -6,11 +6,15 @@ const Header = () => {
     const { language, toggleLanguage, t } = useLanguage();
 
     /*========== Change Backgound Header ==========*/
-    window.addEventListener("scroll", function () {
-        const header = document.querySelector(".header");
-        if(this.scrollY >= 80) header.classList.add("scroll-header");
-        else header.classList.remove("scroll-header");
-    });
+    useEffect(() => {
+        const onScroll = () => {
+            const header = document.querySelector(".header");
+            if (!header) return;
+            header.classList.toggle("scroll-header", window.scrollY >= 80);
+        };
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
     /*========== Toggle Menu ==========*/
     const[Toggle, showMenu] = useState(false);
@@ -19,7 +23,7 @@ const Header = () => {
     return (
         <header className="header">
             <nav className="nav container">
-                <a href="index.html" className="nav__logo">
+                <a href="#home" onClick={() => setActiveNav("#home")} className="nav__logo">
                     João Sousa
                 </a>
 

@@ -1,14 +1,14 @@
 import React from "react";
 import "./skills.css";
 import { FaJava, FaPython, FaJs, FaReact, FaNodeJs, FaDocker, FaGitAlt } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiMysql, SiMongodb, SiCplusplus, SiSpringboot, SiKubernetes, SiD3Dotjs, SiSelenium, SiCucumber } from 'react-icons/si';
+import { SiTypescript, SiTailwindcss, SiMysql, SiMongodb, SiCplusplus, SiSpringboot, SiKubernetes, SiD3Dotjs, SiSelenium, SiCucumber, SiVite, SiNetlify } from 'react-icons/si';
 import { useLanguage } from '../../context/LanguageContext';
 
 const Skills = () => {
     const { t } = useLanguage();
     return (
         <section className="skills section" id="skills">
-            <h2 className="section-title">{t.skills.title}</h2>
+            <h2 className="section__title">{t.skills.title}</h2>
 
             <div className="skills__container container grid">
                 <div className="skills__content">
@@ -54,6 +54,10 @@ const Skills = () => {
                             <SiD3Dotjs className="skills__icon" />
                             <h3 className="skills__name">D3.js</h3>
                         </div>
+                        <div className="skills__data">
+                            <SiVite className="skills__icon" />
+                            <h3 className="skills__name">Vite</h3>
+                        </div>
 
                     </div>
                 </div>
@@ -94,6 +98,10 @@ const Skills = () => {
                         <div className="skills__data">
                             <FaGitAlt className="skills__icon" />
                             <h3 className="skills__name">Git</h3>
+                        </div>
+                        <div className="skills__data">
+                            <SiNetlify className="skills__icon" />
+                            <h3 className="skills__name">Netlify</h3>
                         </div>
                     </div>
                 </div>

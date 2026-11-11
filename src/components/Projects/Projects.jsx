@@ -2,11 +2,29 @@ import React from "react";
 import "./projects.css";
 import easyFarmingImage from "../../assets/easyFarming.png";
 import timewiseImage from "../../assets/timewise.png";
-import { FaReact, FaJava, FaJs, FaPython, FaCss3Alt, FaGithub } from 'react-icons/fa';
-import { SiSpringboot, SiMysql, SiMongodb, SiRabbitmq, SiHtml5, SiTypescript, SiDocker, SiKubernetes, SiD3Dotjs } from 'react-icons/si';
+import casaPontaNegraImage from "../../assets/casaPontaNegra.jpg";
+import residenciasAvenidaImage from "../../assets/residenciasAvenida.jpg";
+import { FaReact, FaJava, FaJs, FaPython, FaCss3Alt, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { SiSpringboot, SiMysql, SiMongodb, SiRabbitmq, SiHtml5, SiDocker, SiKubernetes, SiVite, SiStripe, SiNetlify, SiLeaflet } from 'react-icons/si';
 import { useLanguage } from '../../context/LanguageContext';
 
 const projects = [
+    {
+        title: "Casa da Ponta Negra",
+        descKey: "casaPontaNegraDesc",
+        tags: ["React", "Vite", "Netlify Functions", "Stripe", "Leaflet"],
+        source: "https://github.com/jsousa11/Casa_da_Ponta_Negra_Website",
+        live: "https://casadapontanegra.com",
+        image: casaPontaNegraImage
+    },
+    {
+        title: "Residências Avenida",
+        descKey: "residenciasAvenidaDesc",
+        tags: ["React", "Vite", "CSS", "Netlify"],
+        source: null,
+        live: "https://residencias-avenida.netlify.app",
+        image: residenciasAvenidaImage
+    },
     {
         title: "Easy Farming",
         descKey: "easyFarmingDesc",
@@ -20,14 +38,6 @@ const projects = [
         tags: ["React", "JavaScript", "CSS", "Python", "MongoDB", "RabbitMQ"],
         source: "https://github.com/TimeWise-PI",
         image: timewiseImage
-    },
-    {
-        title: "Spotystats",
-        descKey: "spotystatsDesc",
-        tags: ["JavaScript", "TypeScript", "CSS", "HTML", "D3.js"],
-        source: "https://github.com/jsousa11/VI-spotify-music-analytics",
-        image: null,
-        placeholder: "linear-gradient(135deg, #1DB954 0%, #191414 100%)"
     },
     {
         title: "DinenDash",
@@ -50,10 +60,13 @@ const techIcons = {
     Python: <FaPython />,
     MongoDB: <SiMongodb />,
     RabbitMQ: <SiRabbitmq />,
-    TypeScript: <SiTypescript />,
     Docker: <SiDocker />,
     Kubernetes: <SiKubernetes />,
-    "D3.js": <SiD3Dotjs />
+    Vite: <SiVite />,
+    Stripe: <SiStripe />,
+    Netlify: <SiNetlify />,
+    "Netlify Functions": <SiNetlify />,
+    Leaflet: <SiLeaflet />
 };
 
 const Projects = () => {
@@ -84,6 +97,18 @@ const Projects = () => {
                             )}
                             <div className="project__overlay">
                                 <div className="project__overlay-links">
+                                    {project.live && (
+                                        <a
+                                            href={project.live}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="project__overlay-btn"
+                                            title={t.projects.liveBtn}
+                                        >
+                                            <FaExternalLinkAlt />
+                                            <span>{t.projects.liveBtn}</span>
+                                        </a>
+                                    )}
                                     {project.source && (
                                         <a
                                             href={project.source}
@@ -93,7 +118,7 @@ const Projects = () => {
                                             title="Source Code"
                                         >
                                             <FaGithub />
-                                            <span>Code</span>
+                                            <span>{t.projects.codeBtn}</span>
                                         </a>
                                     )}
                                 </div>
@@ -114,15 +139,26 @@ const Projects = () => {
                             </div>
 
                             <div className="project__footer">
+                                {project.live && (
+                                    <a
+                                        href={project.live}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="project__btn button button--flex"
+                                    >
+                                        <FaExternalLinkAlt className="button__icon" />
+                                        {t.projects.liveBtn}
+                                    </a>
+                                )}
                                 {project.source && (
                                     <a
                                         href={project.source}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="project__btn button button--flex"
+                                        className={project.live ? "project__btn project__btn--demo button button--flex" : "project__btn button button--flex"}
                                     >
                                         <FaGithub className="button__icon" />
-                                        Source
+                                        {t.projects.codeBtn}
                                     </a>
                                 )}
 
