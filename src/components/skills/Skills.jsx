@@ -8,10 +8,10 @@ const Skills = () => {
     const { t } = useLanguage();
     return (
         <section className="skills section" id="skills">
-            <h2 className="section__title">{t.skills.title}</h2>
+            <h2 className="section__title" data-reveal>{t.skills.title}</h2>
 
             <div className="skills__container container grid">
-                <div className="skills__content">
+                <div className="skills__content" data-reveal style={{ "--reveal-delay": "0ms" }}>
                     <h3 className="skills__title">{t.skills.languages}</h3>
                     <div className="skills__box">
                         <div className="skills__data">
@@ -33,7 +33,7 @@ const Skills = () => {
                     </div>
                 </div>
 
-                <div className="skills__content">
+                <div className="skills__content" data-reveal style={{ "--reveal-delay": "90ms" }}>
                     <h3 className="skills__title">{t.skills.frontend}</h3>
                     <div className="skills__box">
                         <div className="skills__data">
@@ -62,7 +62,7 @@ const Skills = () => {
                     </div>
                 </div>
 
-                <div className="skills__content">
+                <div className="skills__content" data-reveal style={{ "--reveal-delay": "180ms" }}>
                     <h3 className="skills__title">{t.skills.backend}</h3>
                     <div className="skills__box">
                         <div className="skills__data">
@@ -84,7 +84,7 @@ const Skills = () => {
                     </div>
                 </div>
 
-                <div className="skills__content">
+                <div className="skills__content" data-reveal style={{ "--reveal-delay": "270ms" }}>
                     <h3 className="skills__title">{t.skills.devops}</h3>
                     <div className="skills__box">
                         <div className="skills__data">
@@ -106,7 +106,7 @@ const Skills = () => {
                     </div>
                 </div>
 
-                <div className="skills__content">
+                <div className="skills__content" data-reveal style={{ "--reveal-delay": "360ms" }}>
                     <h3 className="skills__title">{t.skills.testing}</h3>
                     <div className="skills__box">
                         <div className="skills__data">

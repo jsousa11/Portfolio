@@ -8,16 +8,16 @@ const About = () => {
     const { t } = useLanguage();
     return (
         <section className="about section" id="about">
-            <h2 className="section__title">{t.about.title}</h2>
+            <h2 className="section__title" data-reveal>{t.about.title}</h2>
             <div className="about__container container grid">
 
                 <div className="about__data">
                     <Info />
 
-                    <a download="CVJoaoSousa.pdf" href={CV} className="button button--flex">
+                    <a download="CVJoaoSousa.pdf" href={CV} className="button button--flex" data-reveal style={{ "--reveal-delay": "300ms" }}>
                         {t.about.downloadCV} 
                         <svg
-                                class="button__icon"
+                                className="button__icon"
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
                                 height="24"

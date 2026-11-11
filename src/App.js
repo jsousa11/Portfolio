@@ -10,8 +10,11 @@ import Footer from './components/footer/Footer';
 import ScrollUp from './components/scrollup/ScrollUp';
 import Projects from './components/Projects/Projects';
 import { LanguageProvider } from './context/LanguageContext';
+import useReveal from './hooks/useReveal';
 
 const App = () => {
+  useReveal();
+
   return (
     <LanguageProvider>
       <Header />

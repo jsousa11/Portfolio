@@ -214,3 +214,54 @@
         height: 22px;
     }
 }
+
+/*==================== ENTRANCE ANIMATION ====================*/
+@keyframes home-rise {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes home-pop {
+    from { opacity: 0; transform: scale(0.85); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes home-slide {
+    from { opacity: 0; transform: translateX(-24px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+.home__title,
+.home__description,
+.home__data > .button {
+    animation: home-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.home__description { animation-delay: 0.15s; }
+.home__data > .button { animation-delay: 0.3s; }
+
+.home__img {
+    animation: home-pop 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both, profile__animate 8s ease-in-out 1s infinite;
+}
+
+.home__social-icon {
+    animation: home-slide 0.6s ease both;
+}
+
+.home__social-icon:nth-child(1) { animation-delay: 0.4s; }
+.home__social-icon:nth-child(2) { animation-delay: 0.5s; }
+
+.home__scroll {
+    animation: home-rise 0.8s ease 0.6s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home__title,
+    .home__description,
+    .home__data > .button,
+    .home__img,
+    .home__social-icon,
+    .home__scroll {
+        animation: none;
+    }
+}
